@@ -3,8 +3,8 @@ import { Profile, Post, Database } from './types.ts';
 
 // WICHTIG: Ersetzen Sie diese Platzhalter durch Ihre echten Supabase-Umgebungsvariablen.
 // In einer echten Produktionsumgebung würden diese sicher über Umgebungsvariablen geladen.
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // HIER IHRE SUPABASE URL EINFÜGEN
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'; // HIER IHREN SUPABASE ANON KEY EINFÜGEN
+const SUPABASE_URL = https://khmugixdvuvifnrqxzbn.supabase.co; // HIER IHRE SUPABASE URL EINFÜGEN
+const SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtobXVnaXhkdnV2aWZucnF4emJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI2MDUzNzcsImV4cCI6MjA2ODE4MTM3N30.JtpTOxCl1_qoI1dHvxFYF41hq1yRShwE5MmdXiLtquE; // HIER IHREN SUPABASE ANON KEY EINFÜGEN
 
 if (SUPABASE_URL === 'YOUR_SUPABASE_URL' || SUPABASE_ANON_KEY === 'YOUR_SUPABASE_ANON_KEY') {
     console.warn("Supabase URL und Key sind nicht konfiguriert. Bitte aktualisieren Sie apiClient.ts");
