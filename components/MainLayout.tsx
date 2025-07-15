@@ -8,6 +8,7 @@ import SocialFeed from './views/SocialFeed.tsx';
 import AufgussPlanner from './views/AufgussPlanner.tsx';
 import MembersList from './views/MembersList.tsx';
 import ProfilePage from './views/ProfilePage.tsx';
+import Festivals from './views/Festivals.tsx';
 
 interface MainLayoutProps {
   view: View;
@@ -23,7 +24,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ view, setView, profile }) => {
       case 'social':
         return <SocialFeed profile={profile} />;
       case 'aufguss':
-        return <AufgussPlanner />;
+        return <AufgussPlanner profile={profile} />;
+      case 'festivals':
+        return <Festivals />;
       case 'members':
         return <MembersList />;
       case 'profile':
