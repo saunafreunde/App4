@@ -190,7 +190,7 @@ a:hover {
   color: var(--secondary-text);
 }
 
-.input-field {
+.input-field, .select-field {
   width: 100%;
   padding: 0.75rem 1rem;
   background-color: var(--secondary-bg);
@@ -201,11 +201,20 @@ a:hover {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-field:focus {
+.input-field:focus, .select-field:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.3);
 }
+
+.select-field {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0e0e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
 
 .btn {
   display: inline-block;
@@ -404,6 +413,21 @@ a:hover {
 }
 
 /* === Aufguss Planner === */
+.aufguss-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.aufguss-day {
+    margin-bottom: 1.5rem;
+}
+.aufguss-day h3 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
 .aufguss-plan {
     display: flex;
     flex-direction: column;
@@ -417,12 +441,18 @@ a:hover {
     border-radius: 8px;
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.slot-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 .slot-time {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--accent-color);
-    margin-right: 1rem;
 }
 .slot-sauna {
     color: var(--secondary-text);
@@ -498,4 +528,51 @@ a:hover {
 .festival-actions .btn {
     width: auto;
     flex: 1;
+}
+
+/* === Modal === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1001;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.modal-header h2 {
+    margin-bottom: 0;
+}
+.modal-body {
+    margin-bottom: 2rem;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.modal-footer .btn {
+    width: auto;
 }

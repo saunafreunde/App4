@@ -22,6 +22,10 @@ const CreatePostForm: React.FC<CreatePostFormProps> = ({ profile, onPostCreated 
             user_id: profile.id,
             content: content,
             type: 'text', // Standardmäßig Text-Post
+            poll_options: null,
+            votes: null,
+            image_url: null,
+            embed_url: null,
             likes: [],
         });
         

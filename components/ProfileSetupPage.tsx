@@ -27,7 +27,7 @@ const ProfileSetupPage: React.FC<ProfileSetupPageProps> = ({ session, setAppStag
     setLoading(true);
     setError(null);
 
-    const profileData: Omit<Profile, 'created_at' | 'last_profile_update'> = {
+    const profileData: Omit<Profile, 'created_at' | 'last_profile_update' | 'last_aufguss_share_timestamp' | 'id'> & { id: string } = {
       id: session.user.id,
       email: session.user.email!,
       username,
@@ -38,6 +38,13 @@ const ProfileSetupPage: React.FC<ProfileSetupPageProps> = ({ session, setAppStag
       short_notice_cancellations: 0,
       is_admin: false,
       show_in_member_list: true,
+      avatar_url: null,
+      nickname: null,
+      phone: null,
+      motto: null,
+      qualifications: null,
+      awards: null,
+      permissions: null,
     };
     
     const { data, error } = await apiClient.createProfile(profileData);
